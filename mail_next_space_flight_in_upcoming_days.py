@@ -17,7 +17,7 @@ def space_flight_in_certain_days(file_directory, file_name, compare_days):
     # changing data type of time from str to datetime
     comparing_date = datetime.strptime(comparing_date, "%b-%d-%Y")
     # opening required CSV file using pandas and converting it into
-    space_flight_data = pandas.read_csv(f"{file_directory}/CSV/{file_name}.csv").to_dict(orient="records")
+    space_flight_data = pandas.read_csv(f"{file_directory}/CSV/{file_name}").to_dict(orient="records")
     # loop through each space flight
     for i, one_space_data in enumerate(space_flight_data):
         # getting time to fly for upcoming/past space flight

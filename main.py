@@ -13,7 +13,7 @@ def upcoming_space_flights():
     # extract data from all pages for upcoming space flight
     space_flight.extract_space_flight_data(space_flight.next_space_flight_link)
     # send email for next upcoming flights inn next 10 days
-    send_mail("upcoming_space_flight_data", space_flight.file_name, compare_days)
+    send_mail("upcoming_space_flight_data", f"{space_flight.file_name}.csv", compare_days)
     # uploading upcoming space flight data
     upload_data(space_flight, UPCOMING_SPACE_FLIGHT_GOOGLE_FROM_URL)
 
@@ -21,7 +21,7 @@ def past_space_flights():
     # extract data from all pages for past space flight
     space_flight.extract_space_flight_data(space_flight.past_space_flight_link)
     # send email for next upcoming flights in past 10 or any other  days
-    send_mail("past_space_flight_data", space_flight.file_name, compare_days)
+    send_mail("past_space_flight_data", f"{space_flight.file_name}.csv", compare_days)
     # uploading past space flight data
     upload_data(space_flight, PAST_SPACE_FLIGHT_GOOGLE_FROM_URL)
 
